@@ -1,4 +1,5 @@
-<app-search-bar (searchEvent)="onSearchEvent($event)">
-</app-search-bar>
-<app-page-list [searchResults]="searchResults$|async"></app-page-list>
-<router-outlet></router-outlet>
+<div class="container">
+  <app-search-bar (searchEvent)="onSearchEvent($event)">
+  </app-search-bar>
+  <app-page-list [searchResults]="searchResults$|async"></app-page-list>
+</div>
