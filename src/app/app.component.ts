@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {WikipediaService} from './shared/servives/wikipedia.service';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'wsearch';
+  searchResults$: Observable<any> = of();
+  constructor(private wikipediaService: WikipediaService) {
+  }
+
+  onSearchEvent(term: string) {
+    this.searchResults$  = this.wikipediaService.search(term);
+  }
 }
