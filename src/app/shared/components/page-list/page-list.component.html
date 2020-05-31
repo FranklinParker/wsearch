@@ -1,14 +1,20 @@
 <p>page-list works!</p>
 <ng-container *ngIf="searchResults">
-  {{searchResults|json}}
-  <table>
+  <table class="table is-striped">
     <thead>
     <tr>
-      <th>Head</th>
-      <th>col</th>
+      <th>Title</th>
+      <th>Word Count</th>
+      <th>Snippet</th>
     </tr>
     </thead>
     <tbody>
+    <tr *ngFor="let page of searchResults.query.search">
+      <td>{{page.title}}</td>
+      <td>{{page.wordcount}}</td>
+      <td>{{page.snippet}}}</td>
+    </tr>
     </tbody>
   </table>
+  {{searchResults|json}}
 </ng-container>
