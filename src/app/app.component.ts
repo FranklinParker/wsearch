@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {WikipediaService} from './shared/servives/wikipedia.service';
 import {Observable, of} from 'rxjs';
+import {WikiResponse} from './shared/models/WikiResponse';
+import {Search} from './shared/models/search';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,7 @@ import {Observable, of} from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  searchResults$: Observable<any> = of();
+  searchResults$: Observable<Search[]> = of();
   constructor(private wikipediaService: WikipediaService) {
   }
 

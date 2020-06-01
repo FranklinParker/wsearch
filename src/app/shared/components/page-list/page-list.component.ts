@@ -1,4 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {WikiResponse} from '../../models/WikiResponse';
+import {Search} from '../../models/search';
 
 @Component({
   selector: 'app-page-list',
@@ -6,7 +8,7 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
   styleUrls: ['./page-list.component.scss']
 })
 export class PageListComponent implements OnInit, OnChanges {
-  @Input() searchResults: any;
+  @Input() searchResults: Search[];
   constructor() { }
 
   ngOnInit(): void {
